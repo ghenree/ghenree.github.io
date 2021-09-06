@@ -566,14 +566,16 @@ footer {
 
 .hero__bg {
   position: absolute;
-  top: 0px;
-  left: 0;
   background-image: url(../img/bg1.png);
   background-repeat: no-repeat;
-  background-position: center bottom;
   background-size: cover;
-  width: 120rem;
-  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin: auto;
   z-index: -1;
 }
 
@@ -1184,14 +1186,16 @@ footer {
 
 .footer__bg {
   position: absolute;
-  top: 0;
-  left: 0;
   background-image: url(../img/footer.png);
   background-repeat: no-repeat;
-  background-position: center top;
   background-size: cover;
-  width: 120rem;
-  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin: auto;
   z-index: -1;
 }
 
