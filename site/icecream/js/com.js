@@ -1,10 +1,8 @@
-// ========================================
 // ==============  js натив   =============
 // ========================================
 
 
 // =====   modalTimer
-// Появление окна в модал с задержкой
 // Появляется всего лишь - 1 раз, при загрузке страницы
 
 function modalTimerOpen () {
@@ -14,9 +12,6 @@ function modalTimerOpen () {
 
 function modalTimerClose () {
 	document.getElementById('modal__timer').style.display="none";}
-
-// =====   E N D   modalTimer   =====
-
 
 
 // Select
@@ -38,8 +33,6 @@ const colorBox = document.querySelectorAll('.product__item');
 			if (filterClass) {
 				event.target.classList.add('filter__active'); } });
 	});
-
-// =====   E N D   Select   =====
 
 /*! Slider-gallery */
 var galleryThumbs = new Swiper('.gallery-thumbs', {
@@ -64,8 +57,6 @@ var galleryTop = new Swiper('.gallery-top', {
 		swiper: galleryThumbs,
 	},
 });
-// =========   E N D  /  Slider-gallery
-
 
 // ===== START = LP scroll-to-section
 
@@ -95,16 +86,11 @@ for (let linkNav of links) {
 		}
 	});
 }
-// ===== END = LP scroll-to-section
-
-// ==============  E N D   js натив   ===========
-// ========================================
 
 //  =============  S T A R T   jQuery  ==========
 //  =============================================
 jQuery(document).ready(function() {
 'use strict';
-/*! jQuery  START */
 
 $(document).ready(function() {
 
@@ -119,8 +105,7 @@ $(document).ready(function() {
 		$('body').removeClass('lock');
 	});
 
-	// For resize window on desktop devices
-	// Breakpoint === $mq3
+
 	$(window).resize(function() {
 		if ($(window).width() > 768) {
 			if ($('.burger, .header__menu').hasClass('mopen')) {
@@ -137,11 +122,6 @@ $(document).ready(function() {
 		} else {
 			$(".header__fix").addClass("expand");
 		}
-		// if ($("header").offset().top > 30) { 
-		// 	$("header").addClass("collapse");
-		// } else {
-		// 	$("header").removeClass("collapse");
-		// }
 	});
 	
 // ===== ScrollTop - hide button
@@ -156,8 +136,6 @@ $(document).ready(function() {
 
 
 // Highlighting the active menu item
-// 180 -> switching distance
-// more details: https://atuin.ru/blog/navigacionnoe-menyu-dlya-lendinga/
 let sections = $('section'), 
 nav = $('nav'), 
 nav_height = nav.outerHeight();
@@ -176,22 +154,6 @@ $(window).on('scroll', function () {
 	});
 });
 
-// Auto_Scroll -> native javascript code works
-// it doesn't close burger
-
-// nav.find('a').on('click', function () {
-// 	let $el = $(this), 
-// 	id = $el.attr('href'); 
-// 	$('html, body').animate({
-// 		scrollTop: $(id).offset().top - nav_height
-// 	}, 600);
-// 	return false;
-// });
-
-// END  Highlighting the active menu
-
-// =====
-});		// =====   End function $ jquery
-});		/*! jQuery  END */
-//  =============  E N D   jQuery  ==========
-//  =========================================
+/*! jQuery  END */
+});
+});		
