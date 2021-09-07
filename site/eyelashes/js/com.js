@@ -8,34 +8,17 @@
 document.addEventListener(
 	"DOMContentLoaded", () => {
 		const menu = new MmenuLight(
-			document.querySelector( "#mainMenu" ), // Здесь можно изменить селектор, например: ( '#menu' )
-				// 'all'
-					// ИЛИ "ALL" или установить ширину
-				"(max-width: 778px)"
-				);
+			document.querySelector( "#mainMenu" ),
+				"(max-width: 778px)");
 
 		var navigator = menu.navigation({
-				// selectedClass: 'Selected',
-						
-				// slidingSubmenus: true,
-							// true - slider; false - drop-down, по умолчанию - true
-				// theme: 'dark',
-							// по умолчанию - "light"
 				title: 'Ресницы Ру'
-							// по умолчанию - "Menu"
 			});
 
-		var drawer = menu.offcanvas({
-				// position: 'right'
-						// Меню выходит ==> right or left, по умолчанию - left
-			});
-
-		 // navigator.openPanel(
-			// 	document.querySelector( "#my-ul" )
-			// );
+		var drawer = menu.offcanvas({});
 
 		//	Open the menu, open burger
-		document.querySelector( "a[href='#mainMenu']" ) // селекторы должны совпадать (см. в начале)
+		document.querySelector( "a[href='#mainMenu']" )
 			.addEventListener( "click", ( evnt ) => {
 				evnt.preventDefault();
 				drawer.open();
@@ -48,16 +31,8 @@ document.addEventListener(
 				evnt.preventDefault();
 				document.getElementById('mm-burg').classList.remove('mm-wrapper_opened');
 			});
-
-				// Отключение Меню = всегда видно
-		// "iconPanels": true
 	}
 );
-
-// ==============  E N D / script mmenu-light
-
-
-/*! slider-main */
 
 // =========   slider-main   =========
 
@@ -68,7 +43,6 @@ document.addEventListener(
 		controller: {
 			inverse: true,},
 	});
-	
 
 	var swiperText = new Swiper('.slider-main__text', {
 		loop: false,
@@ -91,25 +65,20 @@ document.addEventListener(
       },
 
 	});
-		// Устанавливаем связь между слайдерами
 	swiperImg.controller.control = swiperText;
 	swiperText.controller.control = swiperImg;
-
-
-// =========   END__slider-main   =========
-
 
 /*! Slider-cat */
 new Swiper('.slider-cat', {
 
-	slidesPerView: 4,		// Кол слайдов для показа
-	speed: 1200,			// Скор перекл слайдов
+	slidesPerView: 4,
+	speed: 1200,
 
-	simulateTouch: true,	// перетаск мышью
-	grabCursor: true,		// вид курсора - рука
-	spaceBetween: 12,		// Отступ gap в px
+	simulateTouch: true,
+	grabCursor: true,
+	spaceBetween: 12,
 
-	// Стрелки
+	// Arrow
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',},
@@ -131,31 +100,16 @@ new Swiper('.slider-cat', {
 		},
 })
 
-// =========   E N D  /  Slider-cat   =========
-
-
 /*! Slider-testimonial */
 new Swiper('.slider-test', {
+	speed: 1200,
+	simulateTouch: true,
+	grabCursor: true,
+	spaceBetween: 24,
 
-	// loop: true,				// infinit слайдер
-	// slidesPerView: 3,		// Кол слайдов для показа
-	// slidesPerGroup: 1,		// Пролистывание
-
-	// autoplay: {
-	// 	delay: 5000,
-	// 	stopOnLastSlide: false,
-	// 	disableOnInteraction: false, },
-	speed: 1200,			// Скор перекл слайдов
-
-	simulateTouch: true,	// перетаск мышью
-	grabCursor: true,		// вид курсора - рука
-	spaceBetween: 24,		// Отступ gap в px
-
-	// Стрелки
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',},
-
 
 	breakpoints: {
 		300: {
@@ -173,31 +127,18 @@ new Swiper('.slider-test', {
 		},
 });
 
-// =========   END  Slider-testimonial   =========
-
-
 /*! Slider-event */
 new Swiper('.slider-event', {
 
-	// loop: true,				// infinit слайдер
-	// slidesPerView: 3,		// Кол слайдов для показа
-	// slidesPerGroup: 1,		// Пролистывание
+	speed: 1200,
 
-	// autoplay: {
-	// 	delay: 5000,
-	// 	stopOnLastSlide: false,
-	// 	disableOnInteraction: false, },
-	speed: 1200,			// Скор перекл слайдов
+	simulateTouch: true,
+	grabCursor: true,
+	spaceBetween: 24,
 
-	simulateTouch: true,	// перетаск мышью
-	grabCursor: true,		// вид курсора - рука
-	spaceBetween: 24,		// Отступ gap в px
-
-	// Стрелки
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',},
-
 
 	breakpoints: {
 		300: {
@@ -215,26 +156,14 @@ new Swiper('.slider-event', {
 		},
 });
 
-// =========   END  Slider-testimonial   =========
-
 /*! Slider-partners */
 new Swiper('.slider-partners', {
+	speed: 1200,
 
-	// loop: true,				// infinit слайдер
-	// slidesPerView: 3,		// Кол слайдов для показа
-	// slidesPerGroup: 1,		// Пролистывание
+	simulateTouch: true,
+	grabCursor: true,
+	spaceBetween: 24,
 
-	// autoplay: {
-	// 	delay: 5000,
-	// 	stopOnLastSlide: false,
-	// 	disableOnInteraction: false, },
-	speed: 1200,			// Скор перекл слайдов
-
-	simulateTouch: true,	// перетаск мышью
-	grabCursor: true,		// вид курсора - рука
-	spaceBetween: 24,		// Отступ gap в px
-
-	// Стрелки
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',},
@@ -256,17 +185,9 @@ new Swiper('.slider-partners', {
 		},
 });
 
-// =========   END  Slider-partners   =========
-
-
-// ==============  E N D   js натив   ===========
-// ========================================
-
 //  =============  S T A R T   jQuery  ==========
-//  =============================================
 jQuery(document).ready(function() {
 'use strict';
-/*! jQuery  START */
 
 $(document).ready(function() {
 
@@ -281,8 +202,6 @@ $(document).ready(function() {
 		$('body').removeClass('lock');
 	});
 
-	// For resize window on desktop devices
-	// Breakpoint === $mq3
 	$(window).resize(function() {
 		if ($(window).width() > 768) {
 			if ($('.burger, .header__menu').hasClass('mopen')) {
@@ -299,11 +218,6 @@ $(document).ready(function() {
 		} else {
 			$(".header__fix").addClass("expand");
 		}
-		// if ($("header").offset().top > 30) { 
-		// 	$("header").addClass("collapse");
-		// } else {
-		// 	$("header").removeClass("collapse");
-		// }
 	});
 	
 // ===== ScrollTop - hide button
@@ -316,8 +230,5 @@ $(document).ready(function() {
 		}
 	});
 
-// =====
-});		// =====   End function $ jquery
+});
 });		/*! jQuery  END */
-//  =============  E N D   jQuery  ==========
-//  =========================================
