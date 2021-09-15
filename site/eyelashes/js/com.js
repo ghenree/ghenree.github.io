@@ -1,31 +1,26 @@
-// ========================================
-// ==============  js натив   =============
-// ========================================
-
-
-
+// ==============  js натив
 /*! mmenu-light */
 document.addEventListener(
 	"DOMContentLoaded", () => {
 		const menu = new MmenuLight(
-			document.querySelector( "#mainMenu" ),
-				"(max-width: 778px)");
+			document.querySelector( "#mainMenu" ), // Здесь можно изменить селектор, например: ( '#menu' )
+				"(max-width: 778px)"
+				);
 
 		var navigator = menu.navigation({
 				title: 'Ресницы Ру'
 			});
 
-		var drawer = menu.offcanvas({});
+		var drawer = menu.offcanvas({
+			});
 
-		//	Open the menu, open burger
-		document.querySelector( "a[href='#mainMenu']" )
+		document.querySelector( "a[href='#mainMenu']" ) // селекторы должны совпадать (см. в начале)
 			.addEventListener( "click", ( evnt ) => {
 				evnt.preventDefault();
 				drawer.open();
 				document.getElementById('mm-burg').classList.add('mm-wrapper_opened');
 				});
 
-		//	Close the menu, close burger
 		document.querySelector(".mm-ocd__backdrop")
 			.addEventListener( "click", ( evnt ) => {
 				evnt.preventDefault();
@@ -33,9 +28,7 @@ document.addEventListener(
 			});
 	}
 );
-
-// =========   slider-main   =========
-
+/*! slider-main */
 	var swiperImg = new Swiper('.slider-main__img', {
 		loop: false,
 		speed: 1400,
@@ -43,6 +36,7 @@ document.addEventListener(
 		controller: {
 			inverse: true,},
 	});
+	
 
 	var swiperText = new Swiper('.slider-main__text', {
 		loop: false,
@@ -65,8 +59,11 @@ document.addEventListener(
       },
 
 	});
+		// Устанавливаем связь между слайдерами
 	swiperImg.controller.control = swiperText;
 	swiperText.controller.control = swiperImg;
+// =========   END__slider-main   =========
+
 
 /*! Slider-cat */
 new Swiper('.slider-cat', {
@@ -78,14 +75,13 @@ new Swiper('.slider-cat', {
 	grabCursor: true,
 	spaceBetween: 12,
 
-	// Arrow
+	// Стрелки
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',},
 
-		// mobileFirst Sistems
 	breakpoints: {
-		300: {
+		280: {
 			slidesPerView: 1,
 			},
 		620: {
@@ -94,7 +90,7 @@ new Swiper('.slider-cat', {
 		870: {
 			slidesPerView: 3,
 			},
-		1084: {
+		1154: {
 			slidesPerView: 4,
 			},
 		},
@@ -103,16 +99,19 @@ new Swiper('.slider-cat', {
 /*! Slider-testimonial */
 new Swiper('.slider-test', {
 	speed: 1200,
+
 	simulateTouch: true,
 	grabCursor: true,
 	spaceBetween: 24,
 
+	// Стрелки
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',},
 
+
 	breakpoints: {
-		300: {
+		280: {
 			slidesPerView: 1,
 			},
 		620: {
@@ -121,36 +120,33 @@ new Swiper('.slider-test', {
 		870: {
 			slidesPerView: 3,
 			},
-		1084: {
+		1154: {
 			slidesPerView: 3.5,
 			},
 		},
 });
-
 /*! Slider-event */
 new Swiper('.slider-event', {
-
 	speed: 1200,
 
 	simulateTouch: true,
 	grabCursor: true,
 	spaceBetween: 24,
 
+	// Стрелки
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',},
 
+
 	breakpoints: {
-		300: {
-			slidesPerView: 1,
-			},
-		620: {
-			slidesPerView: 2,
+		280: {
+			slidesPerView: 1.0,
 			},
 		870: {
-			slidesPerView: 3,
+			slidesPerView: 1.5,
 			},
-		1084: {
+		1154: {
 			slidesPerView: 2.4,
 			},
 		},
@@ -164,13 +160,14 @@ new Swiper('.slider-partners', {
 	grabCursor: true,
 	spaceBetween: 24,
 
+	// Стрелки
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',},
 
 
 	breakpoints: {
-		300: {
+		280: {
 			slidesPerView: 1,
 			},
 		620: {
@@ -179,7 +176,7 @@ new Swiper('.slider-partners', {
 		870: {
 			slidesPerView: 4,
 			},
-		1084: {
+		1154: {
 			slidesPerView: 6,
 			},
 		},
@@ -188,7 +185,6 @@ new Swiper('.slider-partners', {
 //  =============  S T A R T   jQuery  ==========
 jQuery(document).ready(function() {
 'use strict';
-
 $(document).ready(function() {
 
 // ===== Menu Burger
@@ -201,6 +197,7 @@ $(document).ready(function() {
 		$('.burger, .header__menu').removeClass('mopen');
 		$('body').removeClass('lock');
 	});
+
 
 	$(window).resize(function() {
 		if ($(window).width() > 768) {
@@ -231,4 +228,4 @@ $(document).ready(function() {
 	});
 
 });
-});		/*! jQuery  END */
+});
