@@ -32,7 +32,6 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  text-rendering: optimizeSpeed;
   overflow-x: hidden;
   opacity: 1;
 }
@@ -2336,7 +2335,6 @@ input:active {
 
 .box-switch {
   position: absolute;
-  width: 100%;
   top: 10px;
   z-index: 2;
   -webkit-transition: 0.7s ease;
@@ -3871,6 +3869,14 @@ input:active {
   }
 }
 
+
+
+@media (max-width: 768px) {
+  .box-switch {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .poster__bg img {
     width: clamp(28.125rem, -4.16492rem + 97.47899vw, 42.625rem);
@@ -4041,10 +4047,6 @@ input:active {
 
   .sale__body {
     height: 720px;
-  }
-
-  .box-switch {
-    display: none;
   }
 
   .banner-fav__img {
